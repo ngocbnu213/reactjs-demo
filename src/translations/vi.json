@@ -1,0 +1,40 @@
+{
+    "welcome": "Xin chào",
+    "label": {
+        "sign-in": "Đăng nhập",
+        "email": "Email",
+        "email-address": "Địa chỉ email",
+        "password": "Mật khẩu",
+        "remember-me": "Ghi nhớ",
+        "forgot-password": "Quên mật khẩu?",
+        "sign-up": "Sign Up",
+        "sign-up-description": "Chưa có tài khoản? Đăng ký",
+        "copyright": "Thiết kế bởi © BNU 2020.",
+        "save": "Lưu",
+        "cancel": "Hủy bỏ"
+    },
+    "project": {
+        "name": "Tên dự án",
+        "leader": "Trưởng nhóm",
+        "status": "Trạng thái",
+        "member": "Thành viên",
+        "start-date": "Ngày bắt đầu",
+        "end-date": "Ngày kết thúc",
+        "errors": {
+            "name": "Tên dự án không được trống",
+            "start-date": "Ngày bắt đầu phải trước ngày kết thúc",
+            "end-date": "Ngày kết thúc phải sau ngày bắt đầu"
+        },
+        "table": {
+            "id": "Mã dự án",
+            "name": "Tên dự án",
+            "status": "Trạng thái",
+            "start-date":"Ngày bắt đầu",
+            "end-date": "Ngày kết thúc"
+        }
+    },
+    "errors": {
+        "username": "Tên người dùng không được trống",
+        "password":"Mật khẩu không được trống"
+    }
+}

@@ -15,11 +15,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import { AuthContext } from './context';
 import { useHistory } from 'react-router-dom';
-import MuiAlert from '@material-ui/lab/Alert';
+import { Alert } from '../common';
+import { useTranslation } from 'react-i18next';
 
-function Alert(props) {
-    return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 let jwt_decode = require('jwt-decode');
 
 function Copyright() {
@@ -27,7 +25,7 @@ function Copyright() {
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://material-ui.com/">
-                Your Website
+                BNU
       </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -37,7 +35,7 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: '100vh',
+        height: '99%',
     },
     image: {
         backgroundImage: 'url(https://source.unsplash.com/random)',
@@ -68,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignInSide() {
     const classes = useStyles();
+    const [t] = useTranslation('common');
     const [username, setUsername] = React.useState({
         value: '',
         invalid: false,
@@ -106,7 +105,7 @@ export default function SignInSide() {
             setUsername({
                 value: value,
                 invalid: true,
-                errorMessage: 'Username can not be blank'
+                errorMessage: 'errors.username'
             });
         }
     }
@@ -124,7 +123,7 @@ export default function SignInSide() {
             setPassword({
                 value: value,
                 invalid: true,
-                errorMessage: 'Password can not be blank'
+                errorMessage: 'errors.password'
             });
         }
     }
@@ -133,7 +132,7 @@ export default function SignInSide() {
         if (!username.value || !password.value) {
             return;
         }
-        axios.post(process.env.REACT_APP_LOGIN_URL,{
+        axios.post(process.env.REACT_APP_LOGIN_URL, {
             username: username.value,
             password: password.value
         }).then(res => {
@@ -158,7 +157,7 @@ export default function SignInSide() {
                         <LockOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
-                        Sign in
+                        {t('label.sign-in')}
           </Typography>
                     <form className={classes.form} onSubmit={logIn}>
                         <TextField
@@ -168,11 +167,11 @@ export default function SignInSide() {
                             fullWidth
                             value={username.value}
                             error={username.invalid}
-                            helperText={username.errorMessage}
+                            helperText={t(username.errorMessage)}
                             onChange={validateUsername}
                             onBlur={validateUsername}
                             id="email"
-                            label="Email Address"
+                            label={t('label.email-address')}
                             name="email"
                             autoComplete="email"
                             autoFocus
@@ -184,18 +183,17 @@ export default function SignInSide() {
                             fullWidth
                             value={password.value}
                             error={password.invalid}
-                            helperText={password.errorMessage}
+                            helperText={t(password.errorMessage)}
                             onChange={validatePassword}
                             onBlur={validatePassword}
                             name="password"
-                            label="Password"
+                            label={t('label.password')}
                             type="password"
                             id="password"
-                            autoComplete="current-password"
                         />
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}
-                            label="Remember me"
+                            label={t('label.remember-me')}
                         />
                         {error.visible && <Alert severity="error">{error.message}</Alert>}
                         <Button
@@ -206,17 +204,17 @@ export default function SignInSide() {
                             className={classes.submit}
                             onClick={logIn}
                         >
-                            Sign In
+                            {t('label.sign-in')}
             </Button>
                         <Grid container>
                             <Grid item xs>
                                 <Link href="#" variant="body2">
-                                    Forgot password?
+                                    {t('label.forgot-password')}
                 </Link>
                             </Grid>
                             <Grid item>
                                 <Link href="#" variant="body2">
-                                    {"Don't have an account? Sign Up"}
+                                    {t('label.sign-up-description')}
                                 </Link>
                             </Grid>
                         </Grid>

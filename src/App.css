@@ -40,3 +40,9 @@
 html, body, #root {
   height: 100%;
 }
+.app-progress {
+  position: absolute !important;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}

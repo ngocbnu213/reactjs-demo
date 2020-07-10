@@ -1,0 +1,40 @@
+{
+    "welcome": "Welcome",
+    "label": {
+        "sign-in": "Sign In",
+        "email": "Email",
+        "email-address": "Email Adress",
+        "password": "Password",
+        "remember-me": "Remember me",
+        "forgot-password": "Forgot password?",
+        "sign-up": "Sign Up",
+        "sign-up-description": "Don't have an account? Sign Up",
+        "copyright": "Copyright © BNU 2020.",
+        "save": "Save",
+        "cancel": "Cancel"
+    },
+    "project": {
+        "name": "Project name",
+        "leader": "Leader",
+        "status": "Status",
+        "member": "Member",
+        "start-date": "Start Date",
+        "end-date": "End date",
+        "errors": {
+            "name": "Project name can not be blank",
+            "start-date": "Start date must be before end date",
+            "end-date": "End date must be after start date"
+        },
+        "table": {
+            "id": "Id",
+            "name": "Name",
+            "status": "Status",
+            "start-date":"Start Date",
+            "end-date": "End Date"
+        }
+    },
+    "errors": {
+        "username": "Username can not be blank",
+        "password": "Password can not be blank"
+    }
+}
