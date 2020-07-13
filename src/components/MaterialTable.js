@@ -12,11 +12,11 @@ import axios from 'axios';
 
 import './MaterialTable.css';
 
-import { LOAD_PROJECT } from '../actions/ProjectAction';
-import { ProjectDialog } from './ProjectDialog';
+import { LOAD_ALL_PROJECT } from '../actions/ProjectAction';
 import { format } from 'date-fns';
 import AppConstants from '../constants/AppConstants';
 import { ProjectStatus } from '../model/model';
+import ProjectContainer from '../containers/ProjectContainer';
 
 const sortIcon = <ArrowDownward />;
 const selectProps = { indeterminate: isIndeterminate => isIndeterminate };
@@ -111,7 +111,7 @@ export default class MaterialTable extends PureComponent {
 
     componentDidMount() {
         axios.get(process.env.REACT_APP_GET_PROJECT_URL).then(res => {
-            this.props.dispatch(LOAD_PROJECT(res.data));
+            this.props.dispatch(LOAD_ALL_PROJECT(res.data));
         }).catch(error => console.error(error));
     }
 
@@ -142,6 +142,10 @@ export default class MaterialTable extends PureComponent {
         }
     }
 
+    handleClose = () => {
+        this.setState({open: false});
+    }
+
     render() {
         const { toggleCleared } = this.state;
         const { t } = this.props;
@@ -166,7 +170,7 @@ export default class MaterialTable extends PureComponent {
                         pagination
                     />
                 </Card>
-                <ProjectDialog open={this.state.open} project={this.state.project} users = {this.users} userList = {this.userList}/>
+                <ProjectContainer onClose={this.handleClose} open={this.state.open} project={this.state.project} users = {this.users} userList = {this.userList}/>
             </div>
         );
     }

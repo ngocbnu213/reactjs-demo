@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dialog, DialogTitle, DialogContent, Grid, TextField, InputLabel, Button, DialogActions } from '@material-ui/core';
 import Select from 'react-select';
 import DateFnsUtils from '@date-io/date-fns';
@@ -14,12 +14,13 @@ import isBefore from 'date-fns/isBefore';
 import AppConstants from '../constants/AppConstants';
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { LOAD_PROJECT } from '../actions/ProjectAction';
 
 const now = () => {
     return format(new Date(), AppConstants.DATE_FORMAT);
 }
 
-export const ProjectDialog = ({ project, open, users, userList }) => {
+export const ProjectDialog = ({ dispatch, onClose, project, open, users, userList }) => {
     const [savedProject, setSavedProject] = useState(project);
     const [form, setForm] = useState({
         projectName: {
@@ -36,9 +37,11 @@ export const ProjectDialog = ({ project, open, users, userList }) => {
         }
     });
     const [t] = useTranslation('common');
-
+    useEffect(() => {
+        setSavedProject(project);
+    }, [project]);
     const handleClose = () => {
-        open = false;
+        onClose();
         setSavedProject({
             projectName: '',
             status: ProjectStatus.OPEN,
@@ -204,12 +207,7 @@ export const ProjectDialog = ({ project, open, users, userList }) => {
         axios.post("http://localhost:8080/api/project", savedProject)
             .then(res => {
                 const data = res.data;
-                const index = this.state.projects.findIndex(p => p.id === data.id);
-                if (index === -1) {
-                    // TODO add project to redux
-                } else {
-                    // TODO modify project to redux
-                }
+                dispatch(LOAD_PROJECT(data));
             })
             .catch(error => console.error(error))
             .finally(() => handleClose());
