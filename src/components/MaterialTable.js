@@ -92,10 +92,6 @@ export default class MaterialTable extends PureComponent {
             members: []
         }
     };
-    constructor(props) {
-        super(props);
-        
-    }
 
     componentWillMount() {
         axios.get(process.env.REACT_APP_GET_USER_URL).then(res => {
@@ -153,7 +149,7 @@ export default class MaterialTable extends PureComponent {
             <div className="table-container">
                 <Card style={{ height: '100%', width: '80%' }}>
                     <DataTable
-                        title="Project"
+                        title={t('label.project')}
                         columns={columns(t)}
                         data={this.props.projects}
                         selectableRows

@@ -11,7 +11,8 @@
         "sign-up-description": "Chưa có tài khoản? Đăng ký",
         "copyright": "Thiết kế bởi © BNU 2020.",
         "save": "Lưu",
-        "cancel": "Hủy bỏ"
+        "cancel": "Hủy bỏ",
+        "project": "Dự án"
     },
     "project": {
         "name": "Tên dự án",

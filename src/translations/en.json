@@ -11,7 +11,8 @@
         "sign-up-description": "Don't have an account? Sign Up",
         "copyright": "Copyright © BNU 2020.",
         "save": "Save",
-        "cancel": "Cancel"
+        "cancel": "Cancel",
+        "project": "Project"
     },
     "project": {
         "name": "Project name",

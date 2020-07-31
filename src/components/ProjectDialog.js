@@ -215,7 +215,7 @@ export const ProjectDialog = ({ dispatch, onClose, project, open, users, userLis
 
     return (
         <Dialog className="animate__animated animate__zoomIn" fullWidth={true} maxWidth='sm' open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-            <DialogTitle id="form-dialog-title">Project</DialogTitle>
+            <DialogTitle id="form-dialog-title">{t('label.project')}</DialogTitle>
             <DialogContent>
                 <Grid container spacing={2} direction="column">
                     <Grid item xs>
