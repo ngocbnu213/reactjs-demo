@@ -1,8 +1,8 @@
 {
     "welcome": "ようこそ",
     "label": {
-        "sign-in": "Sign In",
-        "email": "Email",
+        "sign-in": "サイン　イン",
+        "email": "",
         "email-address": "Email Adress",
         "password": "Password",
         "remember-me": "Remember me",
