@@ -2,7 +2,7 @@
     "welcome": "ようこそ",
     "label": {
         "sign-in": "サイン　イン",
-        "email": "",
+        "email": "Email",
         "email-address": "Email Adress",
         "password": "Password",
         "remember-me": "Remember me",
