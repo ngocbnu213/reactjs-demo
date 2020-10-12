@@ -204,7 +204,7 @@ export const ProjectDialog = ({ dispatch, onClose, project, open, users, userLis
         if (!isValidProject()) {
             return;
         }
-        axios.post("http://localhost:8080/api/project", savedProject)
+        axios.post(process.env.REACT_APP_PROJECT, savedProject)
             .then(res => {
                 const data = res.data;
                 dispatch(LOAD_PROJECT(data));

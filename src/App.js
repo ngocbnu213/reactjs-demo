@@ -158,7 +158,7 @@ function App() {
     axios.defaults.timeout = 3 * 60 * 60 * 1000; // timeout is 3 minutes
     const token = localStorage.getItem('USER_TOKEN');
     if (token) {
-      fetch("http://localhost:8080/verify", {
+      fetch(process.env.REACT_APP_VERIFY_URL, {
         method: 'POST',
         headers: {
           Accept: 'application/json',

@@ -128,7 +128,7 @@ export default class MaterialTable extends PureComponent {
         const rows = selectedRows.map(r => r.projectName);
         const ids = selectedRows.map(r => r.id);
         if (window.confirm(`Are you sure you want to delete:\r ${rows}?`)) {
-            axios.delete("http://localhost:8080/api/project/remove", {
+            axios.delete(process.env.REACT_APP_PROJECT_REMOVE, {
                 data: ids
             }).then(res => {
                 if (res.status === 200) {
