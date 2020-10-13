@@ -1,6 +1,7 @@
 #!/bin/bash
 export NVM_DIR="/home/ec2-user/.nvm" 
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-cd reactjs-demo
-npm install
-npm run build
+git -v
+cd /home/ec2-user/reactjs-demo
+#npm install
+#npm run build
