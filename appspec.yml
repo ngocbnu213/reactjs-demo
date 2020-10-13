@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: build/
+  - source: /home/ec2-user/reactjs-demo/build/
     destination: /var/www/html/resume-management
 hooks:
   BeforeInstall:
