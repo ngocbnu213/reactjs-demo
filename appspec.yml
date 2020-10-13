@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: react-app/public/index.html
+  - source: public/index.html
     destination: /var/www/html/resume-management
 hooks:
   BeforeInstall:
