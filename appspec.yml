@@ -1,11 +1,12 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: build/
     destination: /var/www/html/resume-management
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
+      runas: root
   AfterInstall:
     - location: scripts/clean-data.sh
   ApplicationStart:
