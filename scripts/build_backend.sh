@@ -7,5 +7,5 @@ java -version
 mvn -version
 
 cd /home/ec2-user/VJP-Employee-system/api-app
-
+sudo cp -f /home/ec2-user/vjp-sys-enviroment/application.properties ./src/main/resources
 mvn clean install -DskipTests
