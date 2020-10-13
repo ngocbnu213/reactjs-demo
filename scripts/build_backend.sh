@@ -5,3 +5,7 @@ export PATH=$PATH:$MAVEN_HOME/bin
 
 java -version
 mvn -version
+
+cd /home/ec2-user/VJP-Employee-system/api-app
+
+mvn clean install -DskipTests
