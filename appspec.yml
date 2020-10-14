@@ -5,14 +5,10 @@ files:
     destination: /var/www/html/resume-management
 hooks:
   BeforeInstall:
-    - location: scripts/git_command.sh
-    - location: scripts/build_frontend.sh
-    - location: scripts/build_backend.sh
+    - location: scripts/test-before.sh
       runas: root
   AfterInstall:
-    - location: scripts/deploy_frontend.sh 
-    - location: scripts/deploy_backend.sh
-    - location: scripts/clean.sh
+    - location: scripts/test-after.sh
       runas: root
   ApplicationStart:
     - location: scripts/start_server.sh
